@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# DELIVERY TUGAS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tugas ini adalah sebagai syarat seleksi pertama untuk proses rekrutmen React Front End Developer MAPID.
 
-## Available Scripts
+## Struktur folder
 
-In the project directory, you can run:
+- folder app terdapat file store.js : tempat init redux store;
+- folder feature terdapat file pointSlice.js : tempat deklarasi function get API, init state, reducer, dan entity adapter
+- folder pages -> map terdapat file index.js : untuk membuat base dari map
+- file app.js : tempat merender component Map
+- file index.js : tempat merender componet App dan configurasi redux
+- file index.css : tempat menambahkan/ arahkan tailwind css
+- file tailwind.config.js : tempat konfigurasi tailwind, ex. menambahkan path file template
 
-### `yarn start`
+## Lokasi API key mapbox
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- terdapat pada folder map file index.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Cara penginstalan librari
 
-### `yarn test`
+### react
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- yarn create react-app
 
-### `yarn build`
+### urbica react
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- yarn add mapbox-gl @urbica/react-map-gl
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### redux
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- yarn add redux react-redux @reduxjs/toolkit
 
-### `yarn eject`
+### axios
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- yarn add axios
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### redux tailwindcss
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- yarn add install -D tailwindcss postcss autoprefixer
+- yarn add tailwindcss init -p
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Fitur basik sesuai rekuiremen
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Base map menggunakan Urbica React Map GL dan Mapbox
+2. Mengakses API dengan axios dan data disimpan distate management redux
+3. Filter warna sesuai dengan status, menggunakan loop serta membuat fungsi filter manual dengan pengkondisian/switch
+4. Popup dimunculkan dengan memberikan event click pada Layer Circle, data pada Layer Circle yang diclick disimpan distate kemudian dirender bersama Popup.
+5. Fitur tambahannya NavigationControl untuk memudahkan dalam interaksi map dan GeolocateControl untuk mengarahkan titip map pada komputer kita.
